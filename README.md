@@ -59,7 +59,8 @@
 - JIRA
 - Webex
 
-## (이모티콘) 3. ERD
+## 🗺️ 3. ERD
+![ERD](images/yourseason_erd.png)
 
 ## 📜 4. 서비스 소개
 
@@ -162,40 +163,31 @@
 - API 유지보수 담당자
   - 프론트와 통신시 생기는 에러를 전담하여 유지보수
 - 고객 CRUD 기능 구현
-  - 회원가입시 이메일과 닉네임을 중복검사하는 로직 구현
-    <br>
-    [코드 보러가기]()
-    - [ ]  컨설턴트와 커스토머 service + private 메서드도 소스코드 추가하기
-- 컨설팅 CRUD
+  - 회원가입시 이메일과 닉네임을 중복검사하는 로직 구현 
+    |
+    [코드 보러가기](https://github.com/ehoi-loveyourself/yourseasons/blob/7ef8dc9bac9637e6deb1a93468fcee8497d74ac9/backend/src/main/java/com/yourseason/backend/member/consultant/service/ConsultantService.java#L43-L44)
 - 컨설팅 예약 및 취소 기능 구현
   - 컨설팅 예약 취소시 `요청을 한 고객`과 `컨설팅을 예약한 고객`이 서로 일치하는지 확인하는 로직을 추가하여 세부적으로 예외 처리
-    <br>
-    [코드 보러가기](https://www.notion.so/README-f38fd6b0ee9e498fb928920a7612d8b2)
+    |
+    [코드 보러가기](https://github.com/ehoi-loveyourself/yourseasons/blob/7ef8dc9bac9637e6deb1a93468fcee8497d74ac9/backend/src/main/java/com/yourseason/backend/reservation/service/ReservationService.java#L59-L74)
   - 고객의 컨설팅 취소 요청시 해당 요청을 DB에서 삭제하지 않고 `isActive` 필드를 false 로 변환하여 보관
-    <br>
-    [코드 보러가기](https://www.notion.so/README-f38fd6b0ee9e498fb928920a7612d8b2)
+    |
+    [코드 보러가기](https://github.com/ehoi-loveyourself/yourseasons/blob/7ef8dc9bac9637e6deb1a93468fcee8497d74ac9/backend/src/main/java/com/yourseason/backend/common/domain/BaseTimeEntity.java#L34-L37)
 - 컨설턴트 닉네임 검색 기능 구현
   - 탈퇴하지 않은 + 검색어를 포함하는 닉네임을 가진 모든 컨설턴트를 조회할 수 있도록 Spring Data JPA 를 이용하여 구현
-    <br>
-    [코드 보러가기]()
+    |
+    [코드 보러가기](https://github.com/ehoi-loveyourself/yourseasons/blob/7ef8dc9bac9637e6deb1a93468fcee8497d74ac9/backend/src/main/java/com/yourseason/backend/member/consultant/service/ConsultantService.java#L106-L120)
   - 컨설턴트 목록을 인기순/리뷰 많은순/최신순/가격 높은 순/가격 낮은 순으로 정렬 조회하는 기능 구현
-    <br>
-    [코드 보러가기]()
+    |
+    [코드 보러가기](https://github.com/ehoi-loveyourself/yourseasons/blob/7ef8dc9bac9637e6deb1a93468fcee8497d74ac9/backend/src/main/java/com/yourseason/backend/member/consultant/service/ConsultantService.java#L75-L104)
 - 인기 컨설턴트 TOP10 조회
-  해당 조건으로 모든 컨설턴트를 조회한 후에 filter로 탈퇴하지 않은 컨설턴트만 거르지 않고
-  애초에 탈퇴하지 않은 + 컨설팅을 많이 한 순으로 컨설턴트를 상위 10명만 조회하도록 코드 리팩토링
-  <br>
-  [코드 보러가기]()
+  - 해당 조건으로 모든 컨설턴트를 조회한 후에 filter로 탈퇴하지 않은 컨설턴트만 거르지 않고 애초에 탈퇴하지 않은 + 컨설팅을 많이 한 순으로 컨설턴트를 상위 10명만 조회하도록 코드 리팩토링
+  |
+  [코드 보러가기](https://github.com/ehoi-loveyourself/yourseasons/blob/7ef8dc9bac9637e6deb1a93468fcee8497d74ac9/backend/src/main/java/com/yourseason/backend/member/consultant/service/ConsultantService.java#L122-L136)
 - 고객이 셀프로 진단한 기록을 조회하는 기능 구현
-  <br>
-  [코드 보러가기]()
-- 컨설턴트 종료시 후처리
-  - 컨설팅 종료 시 `종료 요청을 한 컨설턴트와`과 `컨설팅을 한 컨설턴트` 가 서로 일치하는지 확인하는 로직을 추가하여 세부적으로 예외 처리
-    <br>
-    [코드 보러가기]()
-  - 예약 상태 변경
-    <br>
-    [코드 보러가기]()
+  |
+  [코드 보러가기](https://github.com/ehoi-loveyourself/yourseasons/blob/7ef8dc9bac9637e6deb1a93468fcee8497d74ac9/backend/src/main/java/com/yourseason/backend/member/customer/service/CustomerService.java#L134-L161)
+
 
 ## 🔫 6. 핵심 트러블 슈팅
 ### 6-1. 예약 삭제시 예외처리 추가
@@ -207,7 +199,7 @@
 
   ```java
   @Service 
-  public class CustomerService {
+  public class ReservationService {
       // 생략
 
       public Message deleteReservation(Long customerId, Long reservationId) {
@@ -247,7 +239,7 @@
 
     ```java
     @Service 
-    public class CustomerService {
+    public class ReservationService {
         public Message deleteReservation(Long customerId, Long reservationId) {   
             // 생략
             if (!customer.equals(reservation.getCustomer())) {
