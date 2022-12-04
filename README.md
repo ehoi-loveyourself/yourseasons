@@ -363,9 +363,7 @@
 
 ![치명적인 크루](images/%EC%B9%98%EB%AA%85%EC%A0%81%EC%9D%B8%20%ED%81%AC%EB%A3%A8.jpg)
 
-**프론트엔드**
-
-------
+### 프론트엔드
 
 🧑🏻‍💻 [안성진](https://github.com/anveloper) [📧](mailto:hitedin@gmail.com) (Part Leader)
 
@@ -373,9 +371,7 @@
 
 👩🏻‍💻 [박다빈](https://github.com/elqla) [📧](mailto:elqla19@gmail.com)
 
-**백엔드**
-
-------
+### 백엔드
 
 🧑🏻‍💻 [이상우](https://github.com/swoody1101) [📧](mailto:swoody1101@gmail.com) (Part Leader)
 
