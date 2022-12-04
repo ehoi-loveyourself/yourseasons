@@ -174,7 +174,7 @@
     |
     [코드 보러가기](https://github.com/ehoi-loveyourself/yourseasons/blob/7ef8dc9bac9637e6deb1a93468fcee8497d74ac9/backend/src/main/java/com/yourseason/backend/common/domain/BaseTimeEntity.java#L34-L37)
 - 컨설턴트 닉네임 검색 기능 구현
-  - 탈퇴하지 않은 + 검색어를 포함하는 닉네임을 가진 모든 컨설턴트를 조회할 수 있도록 Spring Data JPA 를 이용하여 구현
+  - 탈퇴하지 않은 + 검색어를 포함하는 닉네임을 가진 모든 컨설턴트를 조회할 수 있도록 JPA의 Query method를 이용하여 구현
     |
     [코드 보러가기](https://github.com/ehoi-loveyourself/yourseasons/blob/7ef8dc9bac9637e6deb1a93468fcee8497d74ac9/backend/src/main/java/com/yourseason/backend/member/consultant/service/ConsultantService.java#L106-L120)
   - 컨설턴트 목록을 인기순/리뷰 많은순/최신순/가격 높은 순/가격 낮은 순으로 정렬 조회하는 기능 구현
